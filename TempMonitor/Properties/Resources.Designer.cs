@@ -63,9 +63,9 @@ namespace PCStats.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_close_window_96px {
+        internal static System.Drawing.Bitmap btn_about {
             get {
-                object obj = ResourceManager.GetObject("icons8_close_window_96px", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_about", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace PCStats.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_gender_neutral_user_200px {
+        internal static System.Drawing.Bitmap btn_close {
             get {
-                object obj = ResourceManager.GetObject("icons8_gender_neutral_user_200px", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,29 @@ namespace PCStats.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_menu_filled_100px {
+        internal static System.Drawing.Bitmap btn_settings {
             get {
-                object obj = ResourceManager.GetObject("icons8_menu_filled_100px", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon {
+            get {
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_big {
+            get {
+                object obj = ResourceManager.GetObject("logo_big", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,9 @@ namespace PCStats.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_settings_64px {
+        internal static System.Drawing.Bitmap logo_dark {
             get {
-                object obj = ResourceManager.GetObject("icons8_settings_64px", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,39 +123,9 @@ namespace PCStats.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap material_design_blue_and_white_to {
+        internal static System.Drawing.Bitmap logo_light {
             get {
-                object obj = ResourceManager.GetObject("material_design_blue_and_white_to", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap picture_dark {
-            get {
-                object obj = ResourceManager.GetObject("picture_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap picture_light {
-            get {
-                object obj = ResourceManager.GetObject("picture_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap semi_transparent_black_box {
-            get {
-                object obj = ResourceManager.GetObject("semi_transparent_black_box", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

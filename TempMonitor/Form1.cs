@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace TempMonitor
 {
     public partial class Form1 : Form
@@ -12,11 +13,33 @@ namespace TempMonitor
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
+        /// Pokretanje Forme
+
+        #region Background Stuff
+
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            float cpu = CPU.NextValue();
+            cpuUsage.Value = (int)cpu;
+            label4.Text = string.Format("{0:0}%", cpu);
+
+            float ram = RAM.NextValue();
+            ramUsage.Value = (int)ram;
+            label5.Text = string.Format("{0:0}%", ram);
+
+
+        }
+        
+        #endregion
+
+        /// Kod za pokretanje tajmera, dobavljanje informacija i postavljanja istih u polje.
+
+        #region Borderless Draging
         private const int cGrip = 16;
         private const int cCaption = 32;
 
@@ -38,12 +61,16 @@ namespace TempMonitor
                 }
             }
             base.WndProc(ref m);
-        }                             // Drag and Drop
+        }
+        #endregion
 
+        /// Kod za omogucavanje prevlacenja Borderless forme.
+
+        #region Buttons
         private void BunifuImageButton1_Click(object sender, EventArgs e)
         {
             Close();
-        }          // Dugme za izlaz.
+        }
 
         private void BunifuImageButton2_Click(object sender, EventArgs e)
         {
@@ -57,27 +84,29 @@ namespace TempMonitor
                 Prikazivanje.ShowSync(Meni);
                 Refresh();
             }
-        }          // Animirani Meni.
+        }
 
         private void BunifuFlatButton2_Click(object sender, EventArgs e)
         {
             AboutBox1 box = new AboutBox1();
             box.ShowDialog();
-        }           // Otvori About Box.
+        }
+        #endregion
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        /// Kod za kontrolu dugmadi.
+
+        #region Theme Settings
+        private void SetThemeDark(object sender, EventArgs e)
         {
-            float cpu = CPU.NextValue();
-            cpuUsage.Value = (int)cpu;
-            label4.Text = string.Format("{0:0}%", cpu);
-
-            float ram = RAM.NextValue();
-            ramUsage.Value = (int)ram;
-            label5.Text = string.Format("{0:0}%", ram);
-
+            DarkTheme();
         }
 
-        private void XuiRadio1_Click(object sender, EventArgs e)
+        private void SetThemeLight(object sender, EventArgs e)
+        {
+            LightTheme();
+        }
+
+        void DarkTheme()
         {
             Refresh();
             label1.BackColor = Color.FromArgb(29, 29, 29);
@@ -95,11 +124,11 @@ namespace TempMonitor
             xuiRadio2.ForeColor = Color.White;
             xuiRadio3.ForeColor = Color.White;
             xuiRadio4.ForeColor = Color.White;
-            pictureBox1.BackgroundImage = PCStats.Properties.Resources.picture_dark;
+            pictureBox1.BackgroundImage = PCStats.Properties.Resources.logo_dark;
             Refresh();
         }
 
-        private void XuiRadio2_Click(object sender, EventArgs e)
+        void LightTheme()
         {
             Refresh();
             label1.BackColor = Color.WhiteSmoke;
@@ -117,10 +146,14 @@ namespace TempMonitor
             xuiRadio2.ForeColor = Color.Black;
             xuiRadio3.ForeColor = Color.Black;
             xuiRadio4.ForeColor = Color.Black;
-            pictureBox1.BackgroundImage = PCStats.Properties.Resources.picture_light;
+            pictureBox1.BackgroundImage = PCStats.Properties.Resources.logo_light;
             Refresh();
+
         }
 
+        #endregion
+
+        /// Podesavanje teme glavnog prozora.
     }
 
 }
